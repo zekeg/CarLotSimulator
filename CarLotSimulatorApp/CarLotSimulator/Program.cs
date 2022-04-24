@@ -19,11 +19,13 @@ namespace CarLotSimulator
             //Now that the Car class is created we can instanciate 3 new cars DONE
             Car car1 = new Car();
             lot.Cars.Add(car1);
+            CarLot.numberOfCars++;
             Car car2 = new Car();
             lot.Cars.Add(car2);
+            CarLot.numberOfCars++;
             Car car3 = new Car();
             lot.Cars.Add(car3);
-
+            CarLot.numberOfCars++;
             //Set the properties for each of the cars DONE
             car1.Year = 2008;
             car2.Year = 2007;
@@ -65,8 +67,10 @@ namespace CarLotSimulator
             //(2 methods counting the third way i instantiated the first 3 cars)
             Car car4 = new Car() { Make = "Noyota", Model = "Zaris", Year = 1999, IsDriveable = false };
             lot.Cars.Add(car4);
+            CarLot.numberOfCars++;
             Car car5 = new Car(1999, "Soyota", "Borvis", true);
             lot.Cars.Add(car5);
+            CarLot.numberOfCars++;
             //*************BONUS X 2*************//
 
             //Create a CarLot class
@@ -74,6 +78,19 @@ namespace CarLotSimulator
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
             lot.Cars.ForEach(car=>Console.WriteLine($"Make: {car.Make} Model: {car.Model} Year: {car.Year}"));
+
+            //Static Keyword Exercise
+            //Creating 3 cars
+            Console.WriteLine("Static Keyword Exercise \n\n\n");
+            Car car6 = new Car();
+            CarLot.numberOfCars++;
+            Console.WriteLine($"New car created, number of cars is {CarLot.numberOfCars} (includes previously created cars above)");
+            Car car7 = new Car();
+            CarLot.numberOfCars++;
+            Console.WriteLine($"New car created, number of cars is {CarLot.numberOfCars} (includes previously created cars above)");
+            Car car8 = new Car();
+            CarLot.numberOfCars++;
+            Console.WriteLine($"New car created, number of cars is {CarLot.numberOfCars} (includes previously created cars above)");
         }
     }
 }
